@@ -23,7 +23,7 @@ interface LinkProps{
 
 
 interface SocialLinksProps{
-    facebook: string;
+    github: string;
     instagram: string;
     linkedin: string;
 }
@@ -67,7 +67,7 @@ export function Home(){
         .then((snapshot) => {
             if(snapshot.data() !== undefined){
                 setSocialLinks({
-                    facebook: snapshot.data()?.facebook,
+                    github: snapshot.data()?.github,
                     instagram: snapshot.data()?.instagram,
                     linkedin: snapshot.data()?.linkedin
                 })

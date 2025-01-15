@@ -11,7 +11,7 @@ getDoc
 
 } from 'firebase/firestore'
 export function Networks(){
-    const [facebook, setFacebook] = useState("")
+    const [github, setGithub] = useState("")
     const [instagram, setInstagram] = useState("")
     const [linkedin, setLinkedin] = useState("")
 
@@ -21,7 +21,7 @@ export function Networks(){
         getDoc(docRef)
         .then((snapshot) => {
             if(snapshot.data() !== undefined){
-                setFacebook(snapshot.data()?.facebook)
+                setGithub(snapshot.data()?.github)
                 setInstagram(snapshot.data()?.instagram)
                 setLinkedin(snapshot.data()?.linkedin)
             }
@@ -35,7 +35,7 @@ export function Networks(){
         e.preventDefault();
 
         setDoc(doc(db, "social", "link"), {
-            facebook: facebook,
+            github: github,
             instagram: instagram,
             linkedin: linkedin,
 
@@ -55,12 +55,12 @@ export function Networks(){
            <h1 className="text-white text-2xl font-medium mt-8 mb-4" >Minhas redes Socias</h1>
 
             <form className="flex flex-col max-w-xl w-full" onSubmit={handleRegister}>
-                <label className="text-white font-medium mt-2 mb-2 ">Link facebook</label>
+                <label className="text-white font-medium mt-2 mb-2 ">Link GitHub</label>
 
                 <Input type="url"
                  placeholder="Digite a url..."
-                 value={facebook}
-                 onChange={(e) => setFacebook(e.target.value)}/>
+                 value={github}
+                 onChange={(e) => setGithub(e.target.value)}/>
 
                 <label className="text-white font-medium mt-2 mb-2 ">Link Instagram</label>
                 <Input type="url"
