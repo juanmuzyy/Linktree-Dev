@@ -103,7 +103,7 @@ export function Home(){
                             <FaLinkedin size={35} color="#fff"/>
                             
                     </Social>
-                    <Social url="">
+                    <Social url={socialLinks?.github}>
                         <FaGithub size={35} color="#fff"/>
                     </Social>
                     <Social url={socialLinks?.instagram}>
